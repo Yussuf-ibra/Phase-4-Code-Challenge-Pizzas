@@ -43,7 +43,7 @@ def get_pizzas():
     pizzas = Pizza.query.all()
     return jsonify([pizza.to_dict(only=("id", "name", "ingredients")) for pizza in pizzas]), 200
 
-# Create new restaurant pizza
+# Create new restaurant pizza.
 @app.route("/restaurant_pizzas", methods=["POST"])
 def create_restaurant_pizza():
     data = request.get_json()
